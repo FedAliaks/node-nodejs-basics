@@ -13,11 +13,11 @@ const remove = async () => {
 
     fs.stat(pathToFile, (err) => {
         if (err) {
-            throw 'FS operation failed';
+            throw new Error('FS operation failed');
         } else {
             fs.unlink(pathToFile, (err) => {
                 if (err) {
-                    throw 'FS operation failed';
+                    throw new Error('FS operation failed');
                 }
             })
         }

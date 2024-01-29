@@ -13,12 +13,12 @@ const rename = async () => {
     const correctFile = path.resolve(__dirname, 'files', 'properFilename.md');
 
     fs.stat(correctFile, (err) => {
-        if (!err) throw 'FS operation failed';
+        if (!err) throw new Error('FS operation failed');
     });
 
     fs.stat(wrongFile, (err) => {
         if (err) {
-            if (!err) throw 'FS operation failed';
+            if (!err) throw new Error('FS operation failed');
         } else {
             fs.rename(wrongFile, correctFile, (err) => {
                 if (err) throw err;

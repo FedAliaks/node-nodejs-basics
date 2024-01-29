@@ -5,8 +5,6 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
-
 const copy = async () => {
     // Write your code here
     const pathToGoalDir = path.resolve(__dirname, 'files_copy');
@@ -15,7 +13,7 @@ const copy = async () => {
 
     fs.stat(pathToGoalDir, (err) => {
         if (!err) {
-            throw 'FS operation failed';
+            throw new Error('FS operation failed');
         } else {
             fs.mkdir(pathToGoalDir, (err) => {
                 if (err) throw err;

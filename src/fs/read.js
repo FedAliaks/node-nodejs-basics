@@ -12,7 +12,7 @@ const read = async () => {
 
     fs.readFile(pathToFile, (err, data) => {
         if (err) {
-            throw 'FS operation failed';
+            throw new Error('FS operation failed');
         } else {
             console.log(data.toString());
         }

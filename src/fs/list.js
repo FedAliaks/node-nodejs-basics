@@ -12,7 +12,7 @@ const list = async () => {
 
     fs.readdir(pathToFolder, (err, filesArray) => {
         if (err || !filesArray.length ) {
-            throw 'FS operation failed';
+            throw new Error('FS operation failed');
         } else {
             filesArray.forEach((item) => console.log(item));
         }
